@@ -50,3 +50,14 @@ Definition is available [here](https://developers.google.com/transit/gtfs/refere
 | start_time    | Time                                    | Required               | Start time for the trip. |
 | stop_id       | ID referencing stops.stop_id            | Required               | Identifies a stop. |
 | delay         | Integer                                 | Required               | Delay (in seconds) can be positive (meaning that the vehicle is late) or negative (meaning that the vehicle is ahead of schedule). Delay of 0 means that the vehicle is exactly on time. |
+
+## stop_times_speeds.txt
+
+| Field Name               |              Type               |        Required        | Description                                                                                                                                                       |
+|--------------------------|:-------------------------------:|:----------------------:|-------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| agency_id                | ID referencing agency.agency_id | Conditionally required | Agency for the specified stop. This field is required when the dataset provides data for trips from more than one agency in agency.txt, otherwise it is optional. |
+| trip_id                  |  ID referencing trips.trip_id   |        Required        | Identifies a trip                                                                                                                                                 |
+| start_date               |              Date               |        Required        | Start day for the trip                                                                                                                                            |
+| start_time               |              Time               |        Required        | Start time for the trip                                                                                                                                           |
+| stop_id                  |  ID referencing stops.stop_id   |        Required        | Identifies a stop                                                                                                                                                 |
+| actual_circulation_speed |              Float              |        Required        | Actual average speed (in km per hour) of a vehicle between previous stop and stop identified with stop_id                                                         |
